@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBD Supply Milford | Premium Hemp Products | Milford, DE</title>
+    <meta name="description" content="CBD Supply Milford — Milford, Delaware's trusted source for premium CBD flower, edibles, vapes, tinctures, topicals, and accessories. Visit us at 10 SW Front St.">
+    <meta name="keywords" content="CBD, hemp, Milford, Delaware, CBD flower, edibles, vapes, tinctures, CBD Supply MD">
+    <meta property="og:title" content="CBD Supply Milford | Premium Hemp Products">
+    <meta property="og:description" content="Milford, Delaware's trusted source for premium CBD and hemp products.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0d0d0d;
+            --bg-secondary: #161616;
+            --bg-card: #1a1a1a;
+            --bg-card-hover: #222222;
+            --green-primary: #4CAF50;
+            --green-light: #66BB6A;
+            --green-dark: #2E7D32;
+            --green-glow: rgba(76, 175, 80, 0.15);
+            --green-glow-strong: rgba(76, 175, 80, 0.3);
+            --text-primary: #f0f0f0;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-green: rgba(76, 175, 80, 0.25);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Outfit', system-ui, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: background 0.3s;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--green-primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-brand span { color: var(--text-primary); font-weight: 400; }
+
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: color 0.25s;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover { color: var(--green-primary); }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .nav-hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 24px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 30%, var(--green-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-banner {
+            max-width: 700px;
+            width: 100%;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-tagline em {
+            font-style: italic;
+            color: var(--green-primary);
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 36px;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.35s forwards;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            background: var(--green-primary);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.5s forwards;
+        }
+
+        .hero-cta:hover {
+            background: var(--green-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(76, 175, 80, 0.3);
+        }
+
+        .hero-cta svg { width: 16px; height: 16px; }
+
+        /* ===== SECTION COMMON ===== */
+        section { padding: 100px 24px; }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--green-primary);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 48px;
+        }
+
+        .about-photo {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--border-green);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 32px;
+        }
+
+        .stat-item { text-align: center; }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--green-primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ===== PRODUCTS ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.35s;
+            cursor: default;
+        }
+
+        .product-card:hover {
+            border-color: var(--border-green);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.85);
+            transition: filter 0.35s;
+        }
+
+        .product-card:hover .product-card-img { filter: brightness(1); }
+
+        .product-card-body { padding: 20px; }
+
+        .product-card-name {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .product-card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .product-card-tag {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 4px 12px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 20px;
+            background: var(--green-glow);
+            color: var(--green-light);
+            border: 1px solid var(--border-green);
+        }
+
+        /* ===== STRAINS CAROUSEL ===== */
+        .strains {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .strains-track-wrapper {
+            position: relative;
+            margin-top: 48px;
+            overflow: hidden;
+        }
+
+        .strains-track-wrapper::before,
+        .strains-track-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .strains-track-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bg-secondary), transparent);
+        }
+
+        .strains-track-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bg-secondary), transparent);
+        }
+
+        .strains-track {
+            display: flex;
+            gap: 20px;
+            animation: scroll-strains 25s linear infinite;
+            width: max-content;
+        }
+
+        .strains-track:hover { animation-play-state: paused; }
+
+        @keyframes scroll-strains {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .strain-chip {
+            flex-shrink: 0;
+            padding: 16px 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .strain-chip:hover {
+            border-color: var(--border-green);
+            background: var(--bg-card-hover);
+        }
+
+        .strain-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .strain-chip-name {
+            font-weight: 500;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+
+        .strain-chip-type {
+            font-size: 12px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 48px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img { transform: scale(1.03); }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        /* ===== BRANDS ===== */
+        .brands {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            text-align: center;
+        }
+
+        .brands-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .brand-item {
+            padding: 16px 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .brand-item:hover {
+            border-color: var(--border-green);
+            color: var(--text-primary);
+        }
+
+        /* ===== REVIEWS ===== */
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .reviews-stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .reviews-stars svg { width: 28px; height: 28px; fill: #f5c518; }
+
+        .reviews-score {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-left: 12px;
+        }
+
+        .reviews-count {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .reviews-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+            padding: 10px 24px;
+            border: 1px solid var(--border-subtle);
+            border-radius: 50px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .reviews-cta:hover {
+            border-color: var(--border-green);
+            color: var(--green-primary);
+        }
+
+        /* ===== CONTACT / LOCATION ===== */
+        .contact {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 48px;
+        }
+
+        .contact-info-block { display: flex; flex-direction: column; gap: 32px; }
+
+        .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--green-glow);
+            border: 1px solid var(--border-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg { width: 20px; height: 20px; stroke: var(--green-primary); fill: none; stroke-width: 1.5; }
+
+        .contact-item-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .contact-item-value {
+            font-size: 16px;
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .contact-item-value a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.25s;
+        }
+
+        .contact-item-value a:hover { color: var(--green-primary); }
+
+        .hours-table {
+            margin-top: 8px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .hours-table td {
+            padding: 6px 0;
+            font-size: 15px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hours-table td:last-child { text-align: right; }
+
+        .hours-table tr.today td { color: var(--green-primary); font-weight: 500; }
+
+        .contact-map {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            min-height: 400px;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+            filter: brightness(0.85) contrast(1.1) saturate(0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .footer-brand {
+            font-weight: 700;
+            color: var(--green-primary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .footer-brand span { color: var(--text-primary); font-weight: 400; }
+
+        .footer-legal {
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-disc {
+            margin-top: 8px;
+            font-size: 11px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(13, 13, 13, 0.97);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--border-subtle);
+                transform: translateY(-120%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links.open { transform: translateY(0); }
+            .nav-hamburger { display: flex; }
+
+            .about-grid,
+            .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+
+            .products-grid { grid-template-columns: 1fr; }
+
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item img { height: 250px; }
+
+            section { padding: 60px 20px; }
+
+            .about-stats { gap: 24px; }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-brand">CBD SUPPLY <span>MILFORD</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#strains">Strains</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Visit Us</a></li>
+        </ul>
+        <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <div class="hero-banner">
+        <img src="images/banner.png" alt="CBD Supply MD — Premium Hemp Products" width="1200" height="400">
+    </div>
+    <h1 class="hero-tagline">All <em>Natural</em> Relief</h1>
+    <p class="hero-sub">Milford, Delaware's trusted source for premium CBD flower, edibles, vapes, and accessories. Walk-ins welcome.</p>
+    <a href="#contact" class="hero-cta">
+        Visit Us
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+    <div class="section-inner">
+        <div class="reveal">
+            <p class="section-label">About Us</p>
+            <h2 class="section-title">Your neighborhood CBD shop</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-photo reveal">
+                <img src="images/store-front.png" alt="CBD Supply Milford storefront">
+            </div>
+            <div class="about-text reveal">
+                <p>CBD Supply Milford is more than a shop — it's where knowledgeable staff meets carefully curated product. Whether you're exploring CBD for the first time or you know exactly what you need, we're here to help you find the right fit.</p>
+                <p>We carry a wide selection of premium hemp-derived products, from our house-branded CBD flower strains to trusted national brands. Every product on our shelves has been vetted for quality, and our team is always happy to walk you through your options.</p>
+                <p>No pressure, no pretense — just honest guidance and quality you can trust.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">4.8</span>
+                        <span class="stat-label">Google Rating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">29+</span>
+                        <span class="stat-label">Reviews</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">6</span>
+                        <span class="stat-label">Days a Week</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="products" id="products">
+    <div class="section-inner">
+        <div class="reveal">
+            <p class="section-label">What We Carry</p>
+            <h2 class="section-title">Products for every need</h2>
+            <p class="section-desc">From farm-fresh flower to fast-acting edibles, we stock a full range of hemp-derived products. Selection rotates regularly — stop in to see what's new.</p>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Populated by JS from config -->
+        </div>
+    </div>
+</section>
+
+<!-- ===== STRAINS CAROUSEL ===== -->
+<section class="strains" id="strains">
+    <div class="section-inner">
+        <div class="reveal">
+            <p class="section-label">House Flower</p>
+            <h2 class="section-title">CBD Supply MD strains</h2>
+            <p class="section-desc">Our house-branded hemp flower — grown for quality, curated for you. Strain availability rotates with the harvest.</p>
+        </div>
+        <div class="strains-track-wrapper reveal">
+            <div class="strains-track" id="strainsTrack">
+                <!-- Populated by JS from config, duplicated for infinite scroll -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery-section" id="gallery">
+    <div class="section-inner">
+        <div class="reveal">
+            <p class="section-label">Inside the Shop</p>
+            <h2 class="section-title">Take a look around</h2>
+        </div>
+        <div class="gallery-grid reveal">
+            <div class="gallery-item">
+                <img src="images/store-interior-1.jpg" alt="CBD Supply Milford interior — display cases and CBD products" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="images/store-interior-2.jpg" alt="CBD Supply Milford interior — flower strains and glass accessories" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BRANDS ===== -->
+<section class="brands" id="brands">
+    <div class="section-inner">
+        <div class="reveal">
+            <p class="section-label">Trusted Partners</p>
+            <h2 class="section-title">Brands we carry</h2>
+        </div>
+        <div class="brands-row reveal" id="brandsRow">
+            <!-- Populated by JS from config -->
+        </div>
+    </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews-section" id="reviews">
+    <div class="section-inner">
+        <div class="reviews-header reveal">
+            <p class="section-label">What People Say</p>
+            <h2 class="section-title">Rated by our community</h2>
+            <div class="reviews-stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f5c518" fill-opacity="0.8"/></svg>
+                <span class="reviews-score">4.8</span>
+            </div>
+            <p class="reviews-count">Based on 29 Google reviews</p>
+            <a href="https://www.google.com/maps/place/CBD+Supply+Milford/@38.9148,-75.4281,17z/" target="_blank" rel="noopener" class="reviews-cta">
+                Read reviews on Google
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+    <div class="section-inner">
+        <div class="reveal">
+            <p class="section-label">Visit Us</p>
+            <h2 class="section-title">Come see us in Milford</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-block reveal">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <p class="contact-item-label">Address</p>
+                        <p class="contact-item-value"><a href="https://maps.google.com/?q=10+SW+Front+St+Milford+DE+19963" target="_blank" rel="noopener">10 SW Front St<br>Milford, DE 19963</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
+                    <div>
+                        <p class="contact-item-label">Phone</p>
+                        <p class="contact-item-value"><a href="tel:+13025037756">(302) 503-7756</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <div>
+                        <p class="contact-item-label">Hours</p>
+                        <table class="hours-table" id="hoursTable">
+                            <tr><td>Sunday</td><td>Closed</td></tr>
+                            <tr><td>Monday</td><td>11 AM – 7 PM</td></tr>
+                            <tr><td>Tuesday</td><td>11 AM – 7 PM</td></tr>
+                            <tr><td>Wednesday</td><td>11 AM – 7 PM</td></tr>
+                            <tr><td>Thursday</td><td>11 AM – 7 PM</td></tr>
+                            <tr><td>Friday</td><td>11 AM – 7 PM</td></tr>
+                            <tr><td>Saturday</td><td>11 AM – 7 PM</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map reveal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.5!2d-75.4281!3d38.9148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b8d3b3b3b3b3b3%3A0x0!2s10+SW+Front+St%2C+Milford%2C+DE+19963!5e0!3m2!1sen!2sus!4v1"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="CBD Supply Milford location map">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p class="footer-brand">CBD SUPPLY <span>MILFORD</span></p>
+    <p class="footer-legal">&copy; <span id="footerYear"></span> CBD Supply MD. All rights reserved.</p>
+    <p class="footer-disc">These statements have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure, or prevent any disease. Must be 21+ to purchase.</p>
+</footer>
+
+<script>
+/* =============================================================
+   SITE CONFIGURATION
+   Edit the arrays below to update products, strains, and brands.
+   No other code changes needed.
+   ============================================================= */
+
+const PRODUCTS = [
+    {
+        name: "CBD Flower",
+        desc: "House-branded hemp flower in a rotating selection of strains. Pre-rolls and full buds available.",
+        tag: "Popular",
+        img: "images/cat-flower.jpg"
+    },
+    {
+        name: "Edibles & Gummies",
+        desc: "Gummies, chocolates, and infused snacks in a range of potencies. Great for controlled, consistent dosing.",
+        tag: "Best Seller",
+        img: "images/cat-edibles.jpg"
+    },
+    {
+        name: "Vapes & Cartridges",
+        desc: "Disposable pens and 510-thread cartridges. Fast-acting and portable for on-the-go relief.",
+        tag: "",
+        img: "images/cat-cbd.jpg"
+    },
+    {
+        name: "Tinctures & Oils",
+        desc: "Sublingual drops in full-spectrum, broad-spectrum, and isolate formulas. Easy to dose, easy to carry.",
+        tag: "",
+        img: "images/cat-accessories.jpg"
+    },
+    {
+        name: "Topicals",
+        desc: "Creams, balms, and salves for targeted relief. Apply directly where you need it most.",
+        tag: "",
+        img: "images/cat-cbd.jpg"
+    },
+    {
+        name: "Glass & Accessories",
+        desc: "Pipes, water pieces, rolling papers, grinders, and everything else you need. RAW, and more.",
+        tag: "",
+        img: "images/cat-glass.jpg"
+    }
+];
+
+const STRAINS = [
+    { name: "Cherry Blossom", type: "Hybrid", color: "#e91e8f" },
+    { name: "Cherry Wine", type: "Hybrid", color: "#c62828" },
+    { name: "Berry Xotic", type: "Indica-leaning", color: "#5c6bc0" },
+    { name: "Presidential", type: "Hybrid", color: "#b0bec5" },
+    { name: "Special Sauce", type: "Indica-leaning", color: "#ff8f00" },
+    { name: "Lifter", type: "Sativa-leaning", color: "#fdd835" },
+    { name: "Suver Haze", type: "Sativa-leaning", color: "#ab47bc" },
+    { name: "Bordeaux", type: "Indica-leaning", color: "#880e4f" }
+];
+
+const BRANDS = [
+    "CBD Supply MD",
+    "Rx Remedies",
+    "Koi CBD",
+    "RAW",
+    "Hometown Hero",
+    "Fuse"
+];
+
+
+/* =============================================================
+   RENDERING — You should not need to edit below this line
+   ============================================================= */
+
+// Products
+const productsGrid = document.getElementById('productsGrid');
+PRODUCTS.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'product-card reveal';
+    card.style.transitionDelay = `${i * 0.08}s`;
+    card.innerHTML = `
+        <img class="product-card-img" src="${p.img}" alt="${p.name}" loading="lazy">
+        <div class="product-card-body">
+            <h3 class="product-card-name">${p.name}</h3>
+            <p class="product-card-desc">${p.desc}</p>
+            ${p.tag ? `<span class="product-card-tag">${p.tag}</span>` : ''}
+        </div>
+    `;
+    productsGrid.appendChild(card);
+});
+
+// Strains — duplicate for infinite scroll
+const strainsTrack = document.getElementById('strainsTrack');
+const strainHTML = STRAINS.map(s => `
+    <div class="strain-chip">
+        <div class="strain-dot" style="background:${s.color}"></div>
+        <span class="strain-chip-name">${s.name}</span>
+        <span class="strain-chip-type">${s.type}</span>
+    </div>
+`).join('');
+strainsTrack.innerHTML = strainHTML + strainHTML;
+
+// Brands
+const brandsRow = document.getElementById('brandsRow');
+BRANDS.forEach(b => {
+    const item = document.createElement('div');
+    item.className = 'brand-item';
+    item.textContent = b;
+    brandsRow.appendChild(item);
+});
+
+// Footer year
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+// Highlight today's hours
+const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const today = days[new Date().getDay()];
+document.querySelectorAll('#hoursTable tr').forEach(row => {
+    if (row.cells[0].textContent === today) row.classList.add('today');
+});
+
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+    });
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            revealObserver.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.15 });
+revealEls.forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
